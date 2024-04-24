@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainBoost Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .flashcard {
+            width: 300px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .front, .back {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>BrainBoost Flashcards</h1>
+
+    <!-- Form to input new flashcards -->
+    <form id="flashcardForm">
+        <label for="front">Front of Flashcard:</label><br>
+        <textarea id="front" rows="3" cols="30"></textarea><br>
+        <label for="back">Back of Flashcard:</label><br>
+        <textarea id="back" rows="3" cols="30"></textarea><br>
+        <button type="button" onclick="createFlashcard()">Create Flashcard</button>
+    </form>
+
+    <!-- Container to hold dynamically created flashcards -->
+    <div id="flashcardContainer"></div>
+
+    <script>
+        function createFlashcard() {
+            // Get input values
+            var frontText = document.getElementById("front").value;
+            var backText = document.getElementById("back").value;
+
+            // Create new flashcard elements
+            var flashcard = document.createElement("div");
+            flashcard.classList.add("flashcard");
+
+            var front = document.createElement("div");
+            front.classList.add("front");
+            front.textContent = frontText;
+
+            var back = document.createElement("div");
+            back.classList.add("back");
+            back.textContent = backText;
+
+            // Append front and back to flashcard
+            flashcard.appendChild(front);
+            flashcard.appendChild(back);
+
+            // Append new flashcard to container
+            var container = document.getElementById("flashcardContainer");
+            container.appendChild(flashcard);
+
+            // Clear input fields after creating flashcard
+            document.getElementById("front").value = "";
+            document.getElementById("back").value = "";
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flippable Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f2f2f2;
+        }
+        .flashcard {
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            margin: 20px auto;
+            position: relative;
+            cursor: pointer;
+        }
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: absolute;
+        }
+        .card-front, .card-back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .card-front {
+            transform: rotateY(0deg);
+        }
+        .card-back {
+            transform: rotateY(180deg);
+        }
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="flashcard" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="card-content">
+                    <h3>Front of Flashcard</h3>
+                    <p>Question or information here...</p>
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="card-content">
+                    <h3>Back of Flashcard</h3>
+                    <p>Answer or details here...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function flipCard(card) {
+            card.querySelector('.card-inner').classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainBoost Study App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        .nav a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to BrainBoost Study App!</h1>
+        <img src="https://images.app.goo.gl/kERjezr1dXMuY7yb9" alt="BrainBoost Logo" class="logo-img">
+    </div>
+
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="calender.html">Calendar</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="log.html">Log</a>
+        <a href="merchant.html">Merchant</a>
+    </div>
+
+    <h2>About BrainBoost</h2>
+    <p>BrainBoost is a study app designed to help you...</p>
+
+    <h2>Get Started</h2>
+    <p>Start using BrainBoost today by...</p>
+</body>
+</html>
+
+
+# Your init script
+#
+# Atom will evaluate this file each time a new window is opened. It is run
+# after packages are loaded/activated and after the previous editor state
+# has been restored.
+#
+# An example hack to log to the console when each text editor is saved.
+#
+# atom.workspace.observeTextEditors (editor) ->
+#   editor.onDidSave ->
+#     console.log "Saved! #{editor.getPath()}"

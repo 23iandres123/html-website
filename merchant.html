@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+    <title>BrainBoost Points System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .points {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>BrainBoost Points System</h1>
+
+    <div class="points" id="points">Points: 0</div>
+
+    <button class="btn" onclick="earnPoints(10)">Earn 10 Points</button>
+    <button class="btn" onclick="earnPoints(20)">Earn 20 Points</button>
+    <button class="btn" onclick="redeemPoints(50)">Redeem 50 Points</button>
+
+    <script>
+        var points = 0;
+
+        function updatePointsDisplay() {
+            document.getElementById("points").textContent = "Points: " + points;
+        }
+
+        function earnPoints(amount) {
+            points += amount;
+            updatePointsDisplay();
+            alert("You earned " + amount + " points!");
+        }
+
+        function redeemPoints(cost) {
+            if (points >= cost) {
+                points -= cost;
+                updatePointsDisplay();
+                alert("You redeemed " + cost + " points!");
+            } else {
+                alert("Insufficient points to redeem.");
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Charities</title>
+</head>
+<body>
+
+<h1>Support These Charities</h1>
+
+<ul>
+    <li>
+        <h2>Conservation International</h2>
+        <p><a href="https://www.conservation.org/">https://www.conservation.org/</a></p>
+    </li>
+    <li>
+        <h2>One Tree Planted</h2>
+        <p><a href="https://onetreeplanted.org/">https://onetreeplanted.org/</a></p>
+    </li>
+    <li>
+        <h2>Jane Goodall Institute</h2>
+        <p><a href="http://www.janegoodall.org/">http://www.janegoodall.org/</a></p>
+    </li>
+    <li>
+        <h2>Sierra Club</h2>
+        <p><a href="https://www.sierraclub.org/home">https://www.sierraclub.org/home</a></p>
+    </li>
+    <li>
+        <h2>World Wildlife Fund</h2>
+        <p><a href="https://www.worldwildlife.org/">https://www.worldwildlife.org/</a></p>
+    </li>
+    <li>
+        <h2>5 Gyres Institute</h2>
+        <p><a href="https://www.5gyres.org/">https://www.5gyres.org/</a></p>
+    </li>
+    <li>
+        <h2>Lonely Whale Foundation</h2>
+        <p><a href="https://www.lonelywhale.org/">https://www.lonelywhale.org/</a></p>
+    </li>
+    <li>
+        <h2>Sustainable Farming International</h2>
+        <p><a href="https://www.sustainableharvest.org/">https://www.sustainableharvest.org/</a></p>
+    </li>
+    <li>
+        <h2>Alaska Conservation Foundation</h2>
+        <p><a href="https://alaskaconservation.org/">https://alaskaconservation.org/</a></p>
+    </li>
+    <li>
+        <h2>National Park Foundation</h2>
+        <p><a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwiWyPOy66aFAxXnYEcBHTfFA98YABAAGgJxdQ&ae=2&gclid=CjwKCAjw_LOwBhBFEiwAmSEQAXimyYOWLuwXdrIljAul-vJxj4LdHAbBrnf-_z0CWLPDb6s_HLyKshoCCtEQAvD_BwE&ohost=www.google.com&cid=CAESVeD2-pVexKn9q_q2gvfYjecoeNgJjef_2-h5T7ggRWlw9Gc1I3RFFureGRGPn9V1yqLhlDsKFTO4lYPoNLnYGXN0wK2xMXeGP1DmTAczoR6YtDMnE74&sig=AOD64_2hJ6IFZ10Ew6IXXJOYN554FE_p4w&q&adurl&ved=2ahUKEwjhwemy66aFAxVeD1kFHerwDPEQ0Qx6BAgJEAE">National Park Foundation</a></p>
+    </li>
+</ul>
+
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainBoost Study App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        .nav a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to BrainBoost Study App!</h1>
+        <img src="https://images.app.goo.gl/kERjezr1dXMuY7yb9" alt="BrainBoost Logo" class="logo-img">
+    </div>
+
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="calender.html">Calendar</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="log.html">Log</a>
+        <a href="merchant.html">Merchant</a>
+    </div>
+
+    <h2>About BrainBoost</h2>
+    <p>BrainBoost is a study app designed to help you...</p>
+
+    <h2>Get Started</h2>
+    <p>Start using BrainBoost today by...</p>
+</body>
+</html>
+# Your init script
+#
+# Atom will evaluate this file each time a new window is opened. It is run
+# after packages are loaded/activated and after the previous editor state
+# has been restored.
+#
+# An example hack to log to the console when each text editor is saved.
+#
+# atom.workspace.observeTextEditors (editor) ->
+#   editor.onDidSave ->
+#     console.log "Saved! #{editor.getPath()}"
